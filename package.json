@@ -1,10 +1,10 @@
 {
-  "name": "@ST4RFKR/ui-kit",
+  "name": "@dangerous-tigers/framehub-ui-kit",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/ST4RFKR"
+    "registry": "https://npm.pkg.github.com/dangerous-tigers"
   },
-  "version": "1.0.3",
-  "homepage": "https://ST4RFKR.github.io/ui-kit",
+  "version": "1.0.0",
+  "homepage": "https://dangerous-tigers.github.io/framehub-ui-kit",
   "type": "module",
   "exports": {
     "./components": {
