@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-u17CrQMm.js";import{c as e}from"./clsx-B-dksMZM.js";const r="_root_18iea_1",n={root:r};function a({className:o,...s}){return t.jsx("div",{"data-slot":"skeleton",className:e(n.root,o),...s})}a.__docgenInfo={description:"",methods:[],displayName:"Skeleton",props:{className:{required:!1,tsType:{name:"string"},description:""}}};export{a as S};

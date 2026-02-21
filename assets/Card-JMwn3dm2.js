@@ -1,0 +1,1 @@
+import{j as t}from"./jsx-runtime-u17CrQMm.js";import{r as c}from"./iframe-BerIK4V3.js";import{c as e}from"./clsx-B-dksMZM.js";const m="_card_8ojgd_1",i={card:m},r=c.forwardRef(({children:a,className:s,...o},d)=>t.jsx("div",{ref:d,className:e(i.card,s),...o,children:a}));r.displayName="Card";r.__docgenInfo={description:"",methods:[],displayName:"Card"};export{r as C};
