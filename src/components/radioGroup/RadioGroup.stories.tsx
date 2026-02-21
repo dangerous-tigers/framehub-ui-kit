@@ -1,0 +1,40 @@
+import { RadioButtonGroup } from "./RadioGroup";
+import type { Meta, StoryObj } from "@storybook/react-vite";
+
+const meta: Meta<typeof RadioButtonGroup> = {
+  title: "UI/RadioButtonGroup",
+  component: RadioButtonGroup,
+  args: {
+    ariaLabel: "Options",
+    required: true,
+    items: [
+      { value: "a", label: "Option A" },
+      { value: "b", label: "Option B" },
+      { value: "c", label: "Option C", disabled: true },
+    ],
+  },
+};
+
+export default meta;
+
+export const Default: StoryObj<typeof RadioButtonGroup> = {
+  render: (args) => <RadioButtonGroup {...args} />,
+};
+
+export const WithDisabled: StoryObj<typeof RadioButtonGroup> = {
+  args: {
+    items: [
+      { value: "1", label: "Enabled" },
+      { value: "2", label: "Disabled", disabled: true },
+    ],
+  },
+};
+
+export const ManyOptions: StoryObj<typeof RadioButtonGroup> = {
+  args: {
+    items: Array.from({ length: 6 }).map((_, i) => ({
+      value: `v${i}`,
+      label: `Option ${i + 1}`,
+    })),
+  },
+};
