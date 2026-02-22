@@ -3,7 +3,7 @@ import type { KeyboardEvent } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import styles from "./ModalHeader.module.scss";
-import { Close } from "icons";
+import Close from "icons/Close";
 
 export const ModalHeaderWithClose = ({
   title,

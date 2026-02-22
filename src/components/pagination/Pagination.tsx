@@ -3,10 +3,10 @@ import clsx from "clsx";
 import styles from "./Pagination.module.scss";
 import { getPages } from "./lib/getPages";
 import { PaginationItem } from "./paginationItem/PaginationItem";
-import { Select } from "components";
+import { Select } from "../select/Select";
 import { pageSizeOptions } from "./model/pageSizeOptions";
-import { ArrowIosBack, ArrowIosForward } from "icons";
-
+import ArrowIosBack from "icons/ArrowIosBack";
+import ArrowIosForward from "icons/ArrowIosForward";
 type Props = {
   totalPages: number;
   currentPage: number;

@@ -2,7 +2,9 @@ import { ComponentPropsWithRef, useState } from "react";
 import clsx from "clsx";
 
 import s from "./Input.module.scss";
-import { EyeOutline, EyeOffOutline, SearchOutline } from "icons";
+import EyeOffOutline from "icons/EyeOffOutline";
+import SearchOutline from "icons/SearchOutline";
+import EyeOutline from "icons/EyeOutline";
 
 type Props = {
   type?: "text" | "password" | "search" | "email";

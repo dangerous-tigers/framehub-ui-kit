@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from "react";
 import * as RadixCheckbox from "@radix-ui/react-checkbox";
 
 import styles from "./Checkbox.module.scss";
-import { CheckboxSelected } from "icons";
+import CheckboxSelected from "./../../icons/CheckboxSelected";
 
 /**
  * checked - состояние чекбокса

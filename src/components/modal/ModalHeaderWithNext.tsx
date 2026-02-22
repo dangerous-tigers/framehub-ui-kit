@@ -3,7 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Button } from "../button/Button";
 
 import styles from "./ModalHeader.module.scss";
-import { ArrowIosBackOutline } from "icons";
+import ArrowIosBackOutline from "icons/ArrowIosBackOutline";
 
 type Props = {
   title: string;

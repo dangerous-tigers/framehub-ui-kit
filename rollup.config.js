@@ -4,10 +4,13 @@ import svgr from "@svgr/rollup";
 import postcss from "rollup-plugin-postcss";
 import terser from "@rollup/plugin-terser";
 import { dts } from "rollup-plugin-dts";
-
-const externalDeps = ["react", "react-dom", "react/jsx-runtime", "clsx"];
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import { visualizer } from "rollup-plugin-visualizer";
 const styleRegex = /\.(css|sass|scss)/;
+
 const plugins = [
+  // для исключения peer зависимостей из сборки
+  peerDepsExternal(),
   // для ts
   typescript({
     tsconfig: "./tsconfig.json",
@@ -16,7 +19,14 @@ const plugins = [
   postcss({
     extract: "index.css",
     modules: true,
-    use: ["sass"],
+    use: [
+      [
+        "sass",
+        {
+          silenceDeprecations: ["legacy-js-api"],
+        },
+      ],
+    ],
     minimize: true,
   }),
   // для SVG
@@ -27,6 +37,12 @@ const plugins = [
   }),
   // для минификации кода
   terser(),
+  // для анализа размера бандла
+  visualizer({
+    filename: "stats.html",
+    open: false,
+    gzipSize: true,
+  }),
 ];
 
 // для иконок не нужно обрабатывать стили, так как они не используют css-модули
@@ -35,20 +51,26 @@ const pluginsIcons = plugins.filter((plugin) => plugin.name !== "postcss");
 const jsBuild = [
   {
     input: "src/components/index.ts",
-    output: [
-      { file: "dist/components/index.js", format: "cjs" },
-      { file: "dist/components/index.esm.js", format: "esm" },
-    ],
-    external: externalDeps,
+    output: {
+      dir: "dist/components",
+      format: "esm",
+      preserveModules: true,
+      preserveModulesRoot: "src/components",
+      entryFileNames: "[name].esm.js",
+      chunkFileNames: "chunks/[name]-[hash].esm.js",
+    },
     plugins: [...plugins],
   },
   {
     input: "src/icons/index.ts",
-    output: [
-      { file: "dist/icons/index.js", format: "cjs" },
-      { file: "dist/icons/index.esm.js", format: "esm" },
-    ],
-    external: externalDeps,
+    output: {
+      dir: "dist/icons",
+      format: "esm",
+      preserveModules: true,
+      preserveModulesRoot: "src/icons",
+      entryFileNames: "[name].esm.js",
+      chunkFileNames: "chunks/[name]-[hash].esm.js",
+    },
     plugins: [...pluginsIcons],
   },
 ];
@@ -56,19 +78,25 @@ const jsBuild = [
 const dtsBuild = [
   {
     input: "src/components/index.ts",
-    output: [
-      { file: "dist/types/components/index.d.ts", format: "cjs" },
-      { file: "dist/types/components/index.d.ts", format: "esm" },
-    ],
+    output: {
+      dir: "dist/types/components",
+      format: "esm",
+      preserveModules: true,
+      preserveModulesRoot: "src/components",
+      entryFileNames: "[name].d.ts",
+    },
     external: (id) => styleRegex.test(id),
-    plugins: [dts()],
+    plugins: [peerDepsExternal(), dts()],
   },
   {
     input: "src/icons/index.ts",
-    output: [
-      { file: "dist/types/icons/index.d.ts", format: "cjs" },
-      { file: "dist/types/icons/index.d.ts", format: "esm" },
-    ],
+    output: {
+      dir: "dist/types/icons",
+      format: "esm",
+      preserveModules: true,
+      preserveModulesRoot: "src/icons",
+      entryFileNames: "[name].d.ts",
+    },
     external: (id) => styleRegex.test(id),
     plugins: [dts()],
   },

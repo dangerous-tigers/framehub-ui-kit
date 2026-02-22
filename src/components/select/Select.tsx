@@ -12,7 +12,7 @@ import * as PrimitiveSelect from "@radix-ui/react-select";
 import styles from "./Select.module.scss";
 
 import { SelectItem } from "./SelectItem";
-import { ArrowIosDownOutline } from "icons";
+import ArrowIosDownOutline from "../../icons/ArrowIosDownOutline";
 
 export type Option = {
   id?: string | number;
