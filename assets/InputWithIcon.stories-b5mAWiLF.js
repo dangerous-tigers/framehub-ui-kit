@@ -1,0 +1,6 @@
+import{j as e}from"./jsx-runtime-u17CrQMm.js";import{c}from"./clsx-B-dksMZM.js";import{M as i}from"./Search-CyKnWP2N.js";import"./iframe-DI9DgLHm.js";import"./preload-helper-PPVm8Dsz.js";const l="_wrapper_149i9_1",m="_label_149i9_7",d="_inputWrapper_149i9_14",u="_input_149i9_14",h="_icon_149i9_49",r={wrapper:l,label:m,inputWrapper:d,input:u,icon:h},n=({icon:a,className:t,label:p,...o})=>e.jsxs("label",{className:c(r.wrapper,t),children:[e.jsx("span",{className:r.label,children:p}),e.jsxs("div",{className:r.inputWrapper,children:[e.jsx("input",{className:r.input,...o}),a&&e.jsx("span",{className:r.icon,children:a})]})]});n.__docgenInfo={description:"",methods:[],displayName:"InputWithIcon",props:{icon:{required:!1,tsType:{name:"ReactNode"},description:""},label:{required:!1,tsType:{name:"string"},description:""}}};const f={title:"UI/InputWithIcon",component:n,parameters:{layout:"centered"}},s={args:{placeholder:"Whith search icon",icon:e.jsx(i,{})}};s.parameters={...s.parameters,docs:{...s.parameters?.docs,source:{originalSource:`{
+  args: {
+    placeholder: "Whith search icon",
+    icon: <Search />
+  }
+}`,...s.parameters?.docs?.source}}};const N=["SearchInput"];export{s as SearchInput,N as __namedExportsOrder,f as default};
