@@ -1,0 +1,27 @@
+.root {
+  border-radius: 50%;
+  &__xs {
+    width: 24px;
+    height: 24px; // POST LIKE
+  }
+  &__s {
+    width: 36px;
+    height: 36px; // MAIN SIZE
+  }
+  &__m {
+    width: 48px;
+    height: 48px; // MESSANGER
+  }
+  &__l {
+    width: 60px;
+    height: 60px; // ADMIN PANEL
+  }
+  &__xl {
+    width: 192px;
+    height: 192px; // PROFILE SETTINGS
+  }
+  &__xxl {
+    width: 204px;
+    height: 204px; // PROFILE
+  }
+}

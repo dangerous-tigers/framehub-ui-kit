@@ -20,3 +20,5 @@ export * from "./swiper";
 export * from "./tabs";
 export * from "./textarea";
 export * from "./sidebarItem";
+
+export * from "./avatar";
