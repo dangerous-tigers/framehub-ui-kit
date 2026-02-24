@@ -22,3 +22,13 @@ export * from "./textarea";
 export * from "./sidebarItem";
 
 export * from "./avatar";
+export {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./table";
