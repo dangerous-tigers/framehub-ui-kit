@@ -4,7 +4,7 @@ import * as PrimitivePopover from "@radix-ui/react-popover";
 
 import s from "./Popover.module.scss";
 import { Button } from "../../button/Button";
-import MoreHorizontalOutline from "icons/MoreHorizontalOutline";
+import MoreHorizontalOutline from "../../../icons/MoreHorizontalOutline";
 
 type Props = {
   editPost?: () => void;
